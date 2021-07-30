@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Image, Text, Slider, TouchableOpacity, Platform, Alert, StyleSheet } from 'react-native';
-
+import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Sound from 'react-native-sound';
 
 const img_speaker = require('./../../Img/resources/ui_speaker.png');
@@ -118,11 +118,11 @@ export default class PlayerScreen extends React.Component {
     }
 
     getAudioTimeString(seconds) {
-        const h = parseInt(seconds / (60 * 60));
+        // const h = parseInt(seconds / (60 * 60));
         const m = parseInt(seconds % (60 * 60) / 60);
         const s = parseInt(seconds % 60);
 
-        return ((h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s));
+        return ( (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s));
     }
 
 
@@ -135,28 +135,30 @@ export default class PlayerScreen extends React.Component {
             <View style={styles._main}>
                 <View style={styles._player_header}>
                     <Image source={img_speaker} style={styles._audio_icon_img} />
-
-                    <TouchableOpacity onPress={this.jumpPrev15Seconds} style={{ justifyContent: 'center' }}>
+                    <TouchableOpacity style={styles._save_btn}>
+                        <Entypo name="heart" size={25} color="#FD6387" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.jumpPrev15Seconds} style={styles._back_sound}>
                         <Image source={img_playjumpleft} style={{ width: 30, height: 30 }} />
-                        <Text style={{ position: 'absolute', alignSelf: 'center', marginTop: 1, color: 'white', fontSize: 12 }}>15</Text>
+                        <Text style={{ position: 'absolute', alignSelf: 'center', marginTop: 1, color: '#4A95FA', fontSize: 10 ,fontWeight:"bold"}}>15</Text>
                     </TouchableOpacity>
                     {this.state.playState == 'playing' &&
-                        <TouchableOpacity onPress={this.pause} style={{ marginHorizontal: 20 }}>
-                            <Image source={img_pause} style={{ width: 30, height: 30 }} />
+                        <TouchableOpacity onPress={this.pause} style={styles._play_btn}>
+                            <Image source={img_pause} style={{ width: 20, height: 20 }} />
                         </TouchableOpacity>}
                     {this.state.playState == 'paused' &&
-                        <TouchableOpacity onPress={this.play} style={{ marginHorizontal: 20 }}>
-                            <Image source={img_play} style={{ width: 30, height: 30 }} />
+                        <TouchableOpacity onPress={this.play} style={styles._play_btn}>
+                            <Image source={img_play} style={{ width: 20, height: 20 }} />
                         </TouchableOpacity>
                     }
-                    <TouchableOpacity onPress={this.jumpNext15Seconds} style={{ justifyContent: 'center' }}>
+                    <TouchableOpacity onPress={this.jumpNext15Seconds} style={styles._back_sound}>
                         <Image source={img_playjumpright} style={{ width: 30, height: 30 }} />
-                        <Text style={{ position: 'absolute', alignSelf: 'center', marginTop: 1, color: 'white', fontSize: 12 }}>15</Text>
+                        <Text style={{ position: 'absolute', alignSelf: 'center', marginTop: 1,color: '#4A95FA', fontSize: 10 ,fontWeight:"bold"}}>15</Text>
                     </TouchableOpacity>
 
                 </View>
                 <View style={{ marginVertical: 15, marginHorizontal: 15, flexDirection: 'row' }}>
-                    <Text style={{ color: 'white', alignSelf: 'center' }}>{currentTimeString}</Text>
+                    {/* <Text style={{ color: 'white', alignSelf: 'center' }}>{currentTimeString}</Text> */}
                     <Slider
                         onTouchStart={this.onSliderEditStart}
                         // onTouchMove={() => console.log('onTouchMove')}
@@ -164,9 +166,9 @@ export default class PlayerScreen extends React.Component {
                         // onTouchEndCapture={() => console.log('onTouchEndCapture')}
                         // onTouchCancel={() => console.log('onTouchCancel')}
                         onValueChange={this.onSliderEditing}
-                        value={this.state.playSeconds} maximumValue={this.state.duration} maximumTrackTintColor='gray' minimumTrackTintColor='white' thumbTintColor='white'
+                        value={this.state.playSeconds} maximumValue={this.state.duration} maximumTrackTintColor='#4A95FA' minimumTrackTintColor='#FFEB5A' thumbTintColor='#FFEB5A'
                         style={{ flex: 1, alignSelf: 'center', marginHorizontal: Platform.select({ ios: 5 }) }} />
-                    <Text style={{ color: 'white', alignSelf: 'center' }}>{durationString}</Text>
+                    <Text style={{ color: 'white', alignSelf: 'center' ,fontWeight:"bold"}}>{durationString}</Text>
                 </View>
             </View>
         )
@@ -189,5 +191,29 @@ const styles = StyleSheet.create({
         width: 75,
         height: 75,
         borderRadius: 10
+    },
+    _save_btn: {
+        backgroundColor: "white",
+        width: 40,
+        height: 40,
+        borderRadius: 40 / 2,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    _back_sound:{
+        backgroundColor: "white",
+        width: 40,
+        height: 40,
+        borderRadius: 40 / 2,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    _play_btn:{
+        backgroundColor: "#4A95FA",
+        width: 50,
+        height: 50,
+        borderRadius: 50 / 2,
+        alignItems: "center",
+        justifyContent: "center"
     }
 });

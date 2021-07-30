@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StatusBar, Text, TouchableOpacity,Linking  } from "react-native";
+import { View, StatusBar, Text, TouchableOpacity, Linking } from "react-native";
 import {
   DrawerContentScrollView,
   DrawerItem,
@@ -7,35 +7,68 @@ import {
 import Feather from 'react-native-vector-icons/dist/Feather';
 import styles from "./styles";
 import { Drawer } from "react-native-paper";
+import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 export default function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
       {/* <==========================> --- <==========================> */}
-      <StatusBar
-        barStyle="white"
-        hidden={false}
-        backgroundColor="white"
-        translucent={true}
-      />
       <View style={styles.sideMenuContainer}>
         {/* <DrawerItemList {...props} /> */}
-        <Drawer.Section />
+        {/* <Drawer.Section /> */}
         {/* <==========================> --- <==========================> */}
-    
-          <View style={styles._drawer_profile_main}>
-            <Text style={styles._user_name}>Hishmat Rai</Text>
-          </View>
+        <TouchableOpacity style={styles._menu_icon} onPress={() => props.navigation.closeDrawer()}>
+          <Ionicons name="menu" size={30} color="white" />
+        </TouchableOpacity>
+        <View style={styles._line}></View>
+
         <DrawerItem
-          label="Onboarding"
+          label="Hilfe"
           labelStyle={{
-            fontWeight: "bold",
-            fontSize: 18,
-            color: "red"
+            fontSize: 20,
+            color: "white",
+            marginBottom:-10
           }}
         />
-
-
-        <Text style={styles._version}>Version:1.0.4</Text>
+        <DrawerItem
+          label="Premium"
+          labelStyle={{
+            fontSize: 20,
+            color: "white",
+            marginTop:-20,
+            marginBottom:-10
+          }}
+        />
+    <DrawerItem
+          label="Datenschutz"
+          labelStyle={{
+            fontSize: 20,
+            color: "white",
+            marginTop:-20
+          }}
+        />
+         <DrawerItem
+          label="Freunde empfehlen"
+          labelStyle={{
+            fontSize: 20,
+            color: "white",
+            marginTop:-20
+          }}
+        />
+         <DrawerItem
+          label="FAQ"
+          labelStyle={{
+            fontSize: 20,
+            color: "white",
+            marginTop:-20
+          }}
+        />
+             <DrawerItem
+          label="Ausloggen"
+          labelStyle={{
+            fontSize: 20,
+            color: "#FFE96E",
+          }}
+        />
       </View>
     </DrawerContentScrollView >
   );
