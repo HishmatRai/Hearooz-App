@@ -11,7 +11,8 @@ import {
     Profile,
     Home,
     DrawerContent,
-    Registrieren
+    Registrieren,
+    CoverDetail
 } from './../Screens/index'
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -44,11 +45,12 @@ function App() {
                 {/* <Stack.Screen name="PasswordWrong2" component={PasswordWrong2} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen  name="Registrieren" component={Registrieren} options={{ headerShown: false }} /> */}
-                <Stack.Screen
+                <Stack.Screen  name="CoverDetail" component={CoverDetail} options={{ headerShown: false }} />
+                {/* <Stack.Screen
           name="Home"
           component={HomeDrawer}
           options={{ headerShown: false }}
-        />
+        /> */}
             </Stack.Navigator>
         </NavigationContainer>
     );

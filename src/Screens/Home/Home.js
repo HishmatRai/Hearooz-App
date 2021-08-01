@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound'
 export default function Home(props) {
     useEffect(() => {
@@ -174,6 +175,146 @@ export default function Home(props) {
                             />
                         </View>
                     </ScrollView>
+
+                    <Image
+                        source={require("./../../Img/Einschlafgeschichten.png")}
+                        style={styles.Mikado}
+                    />
+
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._header_main}>
+                        <Image
+                            source={require("./../../Img/EinschlafgeschichtenIcon.png")}
+                            style={styles._footer_img}
+                        />
+                        <Text style={styles._header_heading}>Einschlafgeschichten</Text>
+                    </View>
+                    {/* <==========================> --- <==========================> */}
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles._slider_1_main}>
+                            <Image
+                                source={require("./../../Img/slider1Img1.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider6Img2.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider2Img2.png")}
+                                style={styles.slider1Img3}
+                            />
+                        </View>
+                    </ScrollView>
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._header_main}>
+                        <Image
+                            source={require("./../../Img/Schuleund.png")}
+                            style={styles._footer_img}
+                        />
+                        <Text style={styles._header_heading}>Schule und Lernen</Text>
+                    </View>
+                    {/* <==========================> --- <==========================> */}
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles._slider_1_main}>
+                            <Image
+                                source={require("./../../Img/slider7Img1.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider7Img2.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider7Img3.png")}
+                                style={styles.slider1Img3}
+                            />
+                        </View>
+                    </ScrollView>
+
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._header_main}>
+                        <Image
+                            source={require("./../../Img/Sendungen.png")}
+                            style={styles._footer_img}
+                        />
+                        <Text style={styles._header_heading}>Sendungen</Text>
+                    </View>
+                    {/* <==========================> --- <==========================> */}
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles._slider_1_main}>
+                            <Image
+                                source={require("./../../Img/slider8Img1.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider8Img2.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider8Img3.png")}
+                                style={styles.slider1Img3}
+                            />
+                        </View>
+                    </ScrollView>
+
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._header_main}>
+                        <Image
+                            source={require("./../../Img/Wissen.png")}
+                            style={styles._footer_img}
+                        />
+                        <Text style={styles._header_heading}>Wissen</Text>
+                    </View>
+                    {/* <==========================> --- <==========================> */}
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles._slider_1_main}>
+                            <Image
+                                source={require("./../../Img/slider9Img1.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider9Img2.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider2Img2.png")}
+                                style={styles.slider1Img3}
+                            />
+                        </View>
+                    </ScrollView>
+
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._header_main}>
+                        <Image
+                            source={require("./../../Img/LustigeGeschichte.png")}
+                            style={styles._footer_img}
+                        />
+                        <Text style={styles._header_heading}>Lustige Geschichte</Text>
+                    </View>
+                    {/* <==========================> --- <==========================> */}
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles._slider_1_main}>
+                            <Image
+                                source={require("./../../Img/slider10Img1.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider10Img2.png")}
+                                style={styles.slider1Img1}
+                            />
+                            <Image
+                                source={require("./../../Img/slider2Img1.png")}
+                                style={styles.slider1Img3}
+                            />
+                        </View>
+                    </ScrollView>
+
+                    {/* <==========================> --- <==========================> */}
+                    <TouchableOpacity style={styles._refresh_btn}>
+                        <MaterialIcons name="refresh" size={25} color="#535242" />
+                        <Text style={styles._refresh_btn_text}>Ziehen zum refresh</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>
             </ScrollView>
@@ -183,25 +324,25 @@ export default function Home(props) {
                     style={styles.footerBG}
                 >
                     <View style={styles._tabs}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("Home")}>
                             <Image
                                 source={require("./../../Img/active1.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("Premium")}>
                             <Image
                                 source={require("./../../Img/seconttab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("Favorites")}>
                             <Image
                                 source={require("./../../Img/thirdtab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("Notifications")}>
                             <Image
                                 source={require("./../../Img/fourthtab.png")}
                                 style={styles.active1}
@@ -288,5 +429,17 @@ const styles = StyleSheet.create({
     },
     Mikado: {
         marginTop: 30,
+    },
+    _refresh_btn: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop:20
+    },
+    _refresh_btn_text: {
+        color: "#535242",
+        fontSize: 14,
+        fontWeight: "bold",
+        marginLeft:5
     }
 });

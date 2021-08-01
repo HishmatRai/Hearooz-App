@@ -6,7 +6,8 @@ import PasswordWrong2 from './PasswordWrong/PasswordWrong2';
 import Profile from './Profile/Profile';
 import Home from './Home/Home';
 import DrawerContent from './DrawerContent/DrawerContent';
-import Registrieren from './Registrieren/Registrieren'
+import Registrieren from './Registrieren/Registrieren';
+import CoverDetail from './CoverDetail/CoverDetail'
 export {
     Password,
     Login,
@@ -16,5 +17,6 @@ export {
     Profile,
     Home,
     DrawerContent,
-    Registrieren
+    Registrieren,
+    CoverDetail
 }
