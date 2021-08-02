@@ -135,27 +135,33 @@ export default class CoverSound extends React.Component {
             <View style={styles._main}>
                 <View style={styles._player_header}>
                     <Image source={img_speaker} style={styles._audio_icon_img} />
-                    <View style={{width:"100%"}}>
+                    <View>
                         <View style={styles._player_main}>
-                            <Slider
-                                onTouchStart={this.onSliderEditStart}
-                                // onTouchMove={() => console.log('onTouchMove')}
-                                onTouchEnd={this.onSliderEditEnd}
-                                // onTouchEndCapture={() => console.log('onTouchEndCapture')}
-                                // onTouchCancel={() => console.log('onTouchCancel')}
-                                onValueChange={this.onSliderEditing}
-                                value={this.state.playSeconds} maximumValue={this.state.duration} maximumTrackTintColor='#4A95FA' minimumTrackTintColor='#FFEB5A' thumbTintColor='#FFEB5A'
-                                style={{ flex: 1, alignSelf: 'center', marginHorizontal: Platform.select({ ios: 5 }) }} />
-                            {this.state.playState == 'playing' &&
-                                <TouchableOpacity onPress={this.pause} style={styles._play_btn}>
-                                    <Image source={img_pause} style={{ width: 20, height: 20 }} />
-                                </TouchableOpacity>}
-                            {this.state.playState == 'paused' &&
-                                <TouchableOpacity onPress={this.play} style={styles._play_btn}>
-                                    <Image source={img_play} style={{ width: 20, height: 20 }} />
-                                </TouchableOpacity>
-                            }
+                            <View >
+                                <Slider
+                                    onTouchStart={this.onSliderEditStart}
+                                    // onTouchMove={() => console.log('onTouchMove')}
+                                    onTouchEnd={this.onSliderEditEnd}
+                                    // onTouchEndCapture={() => console.log('onTouchEndCapture')}
+                                    // onTouchCancel={() => console.log('onTouchCancel')}
+                                    onValueChange={this.onSliderEditing}
+                                    value={this.state.playSeconds} maximumValue={this.state.duration} maximumTrackTintColor='#4A95FA' minimumTrackTintColor='#FFEB5A' thumbTintColor='#FFEB5A'
+                                    style={{ flex: 1, alignSelf: 'center', width: 150, marginHorizontal: Platform.select({ ios: 5 }) }} />
+                            </View>
+                            <View >
+                                {this.state.playState == 'playing' &&
+                                    <TouchableOpacity onPress={this.pause} style={styles._play_btn}>
+                                        <Image source={img_pause} style={{ width: 20, height: 20 }} />
+                                    </TouchableOpacity>}
+                                {this.state.playState == 'paused' &&
+                                    <TouchableOpacity onPress={this.play} style={styles._push_btn}>
+                                        <Image source={img_play} style={{ width: 20, height: 20 }} />
+                                    </TouchableOpacity>
+                                }
+                            </View>
                         </View>
+                        <Text style={styles._card_heading}>Da war ein nettes</Text>
+                        <Text style={styles._card_sub_heading}>Mädchen namens...</Text>
                     </View>
 
                 </View>
@@ -206,8 +212,26 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     },
-    _player_main:{
-        backgroundColor:"red",
-    //   flexDirection:"row"
+    _push_btn: {
+        backgroundColor: "#4A95FA",
+        width: 50,
+        height: 50,
+        borderRadius: 50 / 2,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    _player_main: {
+        flexDirection: "row",
+        width: "100%"
+    },
+    _card_heading:{
+            fontSize:16,
+            color:"#4A95FA",
+            marginTop:-20
+    },
+    _card_sub_heading:{
+        fontSize:16,
+            color:"#4A95FA",
+            fontWeight:"bold"
     }
 });
