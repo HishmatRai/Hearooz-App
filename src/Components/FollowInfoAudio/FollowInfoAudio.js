@@ -9,7 +9,7 @@ const img_play = require('./../../Img/resources/ui_play.png');
 const img_playjumpleft = require('./../../Img/resources/ui_playjumpleft.png');
 const img_playjumpright = require('./../../Img/resources/ui_playjumpright.png');
 
-export default class CoverSound extends React.Component {
+export default class FollowInfoAudio extends React.Component {
 
     static navigationOptions = props => ({
         title: "tesing",
@@ -136,7 +136,26 @@ export default class CoverSound extends React.Component {
                 <View style={styles._player_header}>
                     <Image source={img_speaker} style={styles._audio_icon_img} />
                     <View>
-                        <View style={styles._player_main}>
+                        <View style={styles._counter_btn_main}>
+                            <View style={{ flexDirection: "column", alignItems: "center" }}>
+                                <TouchableOpacity style={styles._counter_btn}>
+                                    <Text style={styles._counter_btn_text}>+3</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles._glass_btn}>
+                                    <Image
+                                        source={require("./../../Img/coverGlass.png")}
+                                        style={styles.active1}
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                            <TouchableOpacity style={styles._save_btn}>
+                                <Entypo name="heart" size={25} color="#A3C9FC" />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </View>
+                <View style={styles._player_main}>
                             <View >
                                 <Slider
                                     onTouchStart={this.onSliderEditStart}
@@ -146,7 +165,7 @@ export default class CoverSound extends React.Component {
                                     // onTouchCancel={() => console.log('onTouchCancel')}
                                     onValueChange={this.onSliderEditing}
                                     value={this.state.playSeconds} maximumValue={this.state.duration} maximumTrackTintColor='#4A95FA' minimumTrackTintColor='#FFEB5A' thumbTintColor='#FFEB5A'
-                                    style={{ flex: 1, alignSelf: 'center', width: 140, marginHorizontal: Platform.select({ ios: 5 }) }} />
+                                    style={{ flex: 1, alignSelf: 'center', width: 270, marginHorizontal: Platform.select({ ios: 5 }) }} />
                             </View>
                             <View >
                                 {this.state.playState == 'playing' &&
@@ -160,27 +179,6 @@ export default class CoverSound extends React.Component {
                                 }
                             </View>
                         </View>
-                        <Text style={styles._card_heading}>Da war ein nettes</Text>
-                        <Text style={styles._card_sub_heading}>Mädchen namens...</Text>
-                        <View style={styles._counter_btn_main}>
-                            <View style={{ flexDirection: "row", alignItems: "center" }}>
-                                <TouchableOpacity style={styles._counter_btn}>
-                                    <Text style={styles._counter_btn_text}>+3</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles._glass_btn}>
-                                    <Image
-                                        source={require("./../../Img/coverGlass.png")}
-                                        style={styles.active1}
-                                    />
-                                </TouchableOpacity>
-                            </View>
-                            <TouchableOpacity style={styles._save_btn}>
-                                <Entypo name="heart" size={25} color="#FD6387" />
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-
-                </View>
             </View>
         )
     }
@@ -190,17 +188,15 @@ export default class CoverSound extends React.Component {
 const styles = StyleSheet.create({
     _main: {
         marginHorizontal: 20,
-        borderTopColor: "#707070",
-        borderTopWidth: 1,
-        paddingVertical: 10,
+        paddingVertical: 20,
     },
     _player_header: {
         flexDirection: "row",
         justifyContent: "space-between",
     },
     _audio_icon_img: {
-        width: 130,
-        height: 130,
+        width: 262,
+        height: 258,
         borderRadius: 10
     },
     _save_btn: {
@@ -210,7 +206,8 @@ const styles = StyleSheet.create({
         borderRadius: 40 / 2,
         alignItems: "center",
         justifyContent: "center",
-        elevation: 2
+        elevation: 2,
+        marginTop:40
     },
     _back_sound: {
         backgroundColor: "white",
@@ -240,23 +237,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         width: "100%"
     },
-    _card_heading: {
-        fontSize: 16,
-        color: "#4A95FA",
-        marginTop: -15,
-        marginLeft:10
-    },
-    _card_sub_heading: {
-        fontSize: 16,
-        color: "#4A95FA",
-        fontWeight: "bold",
-        marginLeft:10
-
-    },
     _counter_btn_main: {
-        flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between",
         marginTop: 5,
         marginLeft:10
     },
@@ -281,6 +263,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: "center",
         justifyContent: "center",
-        marginLeft: 10
+        marginTop:20
     }
 });

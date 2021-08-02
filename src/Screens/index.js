@@ -7,7 +7,13 @@ import Profile from './Profile/Profile';
 import Home from './Home/Home';
 import DrawerContent from './DrawerContent/DrawerContent';
 import Registrieren from './Registrieren/Registrieren';
-import CoverDetail from './CoverDetail/CoverDetail'
+import CoverDetail from './CoverDetail/CoverDetail';
+import SlumberTime from './SlumberTime/SlumberTime';
+import Search from './Search/Search';
+import FollowInfo from './FollowInfo/FollowInfo';
+import Premium from './Premium/Premium';
+import Favorites from './Favorites/Favorites';
+import Notifications from './Notifications/Notifications'
 export {
     Password,
     Login,
@@ -18,5 +24,11 @@ export {
     Home,
     DrawerContent,
     Registrieren,
-    CoverDetail
+    CoverDetail,
+    SlumberTime,
+    Search,
+    FollowInfo,
+    Premium,
+    Favorites,
+    Notifications
 }

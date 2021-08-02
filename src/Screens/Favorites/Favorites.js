@@ -6,7 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import FollowInfoAudio from './../../Components/FollowInfoAudio/FollowInfoAudio'
-export default function Premium(props) {
+export default function Favorites(props) {
     useEffect(() => {
         StatusBar.setHidden(true);
     }, [])
@@ -45,21 +45,17 @@ export default function Premium(props) {
                 <View style={styles._main}>
                     {/* <==========================> --- <==========================> */}
                     <ImageBackground
-                        source={require("./../../Img/PremiumBG.png")}
+                        source={require("./../../Img/FavoritesBG.png")}
                         style={styles.PremiumBG}
                     >
                         <View style={styles._card_header}>
-                            <Text style={styles._card_heading}>Dies ist der{"\n"}Premiumbereich</Text>
+                            <Text style={styles._card_heading}>AUSWAHL ÜBER{"\n"}
+                                KATEGORIEN NAME</Text>
                             <Image
-                                source={require("./../../Img/Premiumbereich.png")}
+                                source={require("./../../Img/FavoritesHeader.png")}
                                 style={styles.active1}
                             />
                         </View>
-                        <Text style={styles._card_sub_heading}>Um die unteren inhalte abzuspielen,{"\n"}
-                            benötigst du ein Abo.</Text>
-                        <TouchableOpacity style={styles._Informationen_btn}>
-                            <Text style={styles._Informationen_btn_text}>Mehr Informationen ></Text>
-                        </TouchableOpacity>
                     </ImageBackground>
 
                     {/* <==========================> --- <==========================> */}
@@ -74,22 +70,22 @@ export default function Premium(props) {
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles._slider_1_main}>
                             <Image
-                                source={require("./../../Img/Premium1.png")}
+                                source={require("./../../Img/Favorites1.png")}
                                 style={styles.slider1Img1}
                             />
                             <Image
-                                source={require("./../../Img/Premium12.png")}
+                                source={require("./../../Img/Favorites12.png")}
                                 style={styles.slider1Img1}
                             />
                             <Image
-                                source={require("./../../Img/Premium1.png")}
+                                source={require("./../../Img/Favorites1.png")}
                                 style={styles.slider1Img3}
                             />
                         </View>
                     </ScrollView>
 
-                     {/* <==========================> --- <==========================> */}
-                     <View style={styles._header_main}>
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._header_main}>
                         <Image
                             source={require("./../../Img/Schule.png")}
                             style={styles._footer_img}
@@ -100,15 +96,15 @@ export default function Premium(props) {
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles._slider_1_main}>
                             <Image
-                                source={require("./../../Img/Premium2.png")}
+                                source={require("./../../Img/Favorites2.png")}
                                 style={styles.slider1Img1}
                             />
                             <Image
-                                source={require("./../../Img/Premium21.png")}
+                                source={require("./../../Img/Favorites21.png")}
                                 style={styles.slider1Img1}
                             />
                             <Image
-                                source={require("./../../Img/Premium2.png")}
+                                source={require("./../../Img/Favorites2.png")}
                                 style={styles.slider1Img3}
                             />
                         </View>
@@ -131,13 +127,13 @@ export default function Premium(props) {
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => props.navigation.navigate("Premium")}>
                             <Image
-                                source={require("./../../Img/active2.png")}
+                                source={require("./../../Img/seconttab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => props.navigation.navigate("Favorites")}>
                             <Image
-                                source={require("./../../Img/thirdtab.png")}
+                                source={require("./../../Img/active3.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
@@ -169,7 +165,7 @@ const styles = StyleSheet.create({
     },
     PremiumBG: {
         resizeMode: "cover",
-        height: 197
+        height: 120
     },
     _menu_icon: {
         width: 40,
@@ -222,25 +218,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "white"
     },
-    _card_sub_heading: {
-        fontSize: 16,
-        fontWeight: "bold",
-        color: "white",
-        marginLeft: 20,
-        marginTop: -10
-    },
-    _Informationen_btn: {
-        borderBottomWidth: 1,
-        borderBottomColor: "#FFED47",
-        marginLeft: 20,
-        width: "40%",
-        marginTop: 10
-    },
-    _Informationen_btn_text: {
-        fontSize: 16,
-        color: "#FFED47",
-        fontWeight: "bold"
-    },
+
     _header_main: {
         flexDirection: "row",
         alignItems: "center",

@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, TextInput, Image, ImageBackground } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-import CoverSound from './../../Components/CoverSound/CoverSound'
-export default function CoverDetail(props) {
-    const [info, setInfo] = useState(false);
+import SearchSound from './../../Components/SearchSound/SearchSound'
+export default function Search(props) {
+    const [search, onChangeSearch] = React.useState("");
     useEffect(() => {
         StatusBar.setHidden(true);
     }, [])
+
     return (
         <View style={styles.container}>
             {/* <==========================> --- <==========================> */}
@@ -27,10 +28,10 @@ export default function CoverDetail(props) {
                         <TouchableOpacity style={styles._menu_icon} onPress={() => props.navigation.navigate("Home")}>
                             <Ionicons name="home-sharp" size={30} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("SlumberTime")}>
+                        <TouchableOpacity style={styles._menu_icon} onPress={() => props.navigation.navigate("SlumberTime")}>
                             <Ionicons name="moon" size={30} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("Search")}>
+                        <TouchableOpacity style={styles._menu_icon} onPress={() => props.navigation.navigate("Search")}>
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
@@ -45,56 +46,27 @@ export default function CoverDetail(props) {
                 <View style={styles._main}>
 
                     {/* <==========================> --- <==========================> */}
-                    <ImageBackground
-                        source={require("./../../Img/cover.png")}
-                        style={styles.coverBG}
-                    >
-                        <View style={styles._cover_main}>
-                            <Text style={styles._cover_heading}>Das ist das{"\n"}
-                                Originalmärchen</Text>
-                            <View>
-                                <TouchableOpacity style={styles._save_btn}>
-                                    <Entypo name="heart" size={25} color="#FD6387" />
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles._info_btn} onPress={() => setInfo(!info)}>
-                                    <Text style={styles._info_btn_Text}>i</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </ImageBackground>
-                    {/* <==========================> --- <==========================> */}
-                    {info !== false ?
-                        <View style={styles._cover_info_main}>
-                            <Text style={styles._cover_info_heading}>weißt du's schon? - Das ...</Text>
-                            <Text style={styles._cover_info_details}>Lorem Ipsum ist ein einfacher Demo-Text für
-                                die Print- und Schriftindustrie. Lorem Ipsum ist
-                                in der Industrie bereits der Standard Demo-Text
-                                seit 1500, als ein unbekannter Schriftsteller eine
-                                Hand voll Wörter nahm und diese.</Text>
-                        </View>
-                        : null}
 
-                    {/* <==========================> --- <==========================> */}
-                    <View style={{ marginTop: 15 }}>
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
+                    <View style={styles._input_main}>
+                        <Ionicons name="search" size={30} color="#707070" />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeSearch}
+                            value={search}
+                            placeholder="Hör Lok"
+                            placeholderTextColor="#4A95FA"
+                            color="#4A95FA"
+                        />
+                    </View>
+
+                    <View style={{ marginTop: 20 }}>
+                        <SearchSound />
+                        <SearchSound />
+                        <SearchSound />
+                        <SearchSound />
+                        <SearchSound />
+                        <SearchSound />
+                        <SearchSound />
                     </View>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>
@@ -149,11 +121,6 @@ const styles = StyleSheet.create({
     footerBG: {
         resizeMode: "cover",
     },
-    coverBG: {
-        resizeMode: "cover",
-        height: 152,
-        marginTop: -5
-    },
     _menu_icon: {
         width: 40,
         height: 40,
@@ -183,56 +150,21 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         paddingVertical: 10
     },
-    _save_btn: {
-        backgroundColor: "white",
-        width: 40,
-        height: 40,
-        borderRadius: 40 / 2,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    _cover_heading: {
-        color: 'white',
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginTop: 50
-    },
-    _cover_main: {
+    _input_main: {
+        alignSelf: "center",
         flexDirection: "row",
-        justifyContent: "space-between",
-        marginHorizontal: 20,
-        marginVertical: 20
-    },
-    _info_btn: {
-        backgroundColor: "#E4EFFF",
-        width: 40,
-        height: 40,
-        borderRadius: 40 / 2,
         alignItems: "center",
-        justifyContent: "center",
-        marginTop: 30
+        marginTop: 20,
+        backgroundColor: "#E4F0FF",
+        width: "90%",
+        borderRadius: 50,
+        paddingHorizontal: 10
     },
-    _info_btn_Text: {
-        fontWeight: "bold",
-        color: "#535242",
-        fontSize: 25
-    },
-    _cover_info_main: {
-        padding: 20,
-        backgroundColor: 'white',
-        elevation: 3,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20
-    },
-    _cover_info_heading: {
-        color: "#30302F",
+    input: {
+        paddingHorizontal: 10,
         fontSize: 18,
-        fontWeight: "bold"
-    },
-    _cover_info_details: {
-        fontSize: 14,
-        color: "#535242",
         fontWeight: "bold",
-        marginTop: 10
-    }
+        width: "90%"
+    },
+
 });

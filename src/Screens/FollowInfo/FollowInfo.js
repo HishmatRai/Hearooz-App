@@ -6,7 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import FollowInfoAudio from './../../Components/FollowInfoAudio/FollowInfoAudio'
-export default function Premium(props) {
+export default function FollowInfo(props) {
     useEffect(() => {
         StatusBar.setHidden(true);
     }, [])
@@ -43,77 +43,53 @@ export default function Premium(props) {
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles._main}>
-                    {/* <==========================> --- <==========================> */}
-                    <ImageBackground
-                        source={require("./../../Img/PremiumBG.png")}
-                        style={styles.PremiumBG}
-                    >
-                        <View style={styles._card_header}>
-                            <Text style={styles._card_heading}>Dies ist der{"\n"}Premiumbereich</Text>
-                            <Image
-                                source={require("./../../Img/Premiumbereich.png")}
-                                style={styles.active1}
-                            />
-                        </View>
-                        <Text style={styles._card_sub_heading}>Um die unteren inhalte abzuspielen,{"\n"}
-                            benötigst du ein Abo.</Text>
-                        <TouchableOpacity style={styles._Informationen_btn}>
-                            <Text style={styles._Informationen_btn_text}>Mehr Informationen ></Text>
-                        </TouchableOpacity>
-                    </ImageBackground>
 
                     {/* <==========================> --- <==========================> */}
-                    <View style={styles._header_main}>
-                        <Image
-                            source={require("./../../Img/NeueFolgen.png")}
-                            style={styles._footer_img}
-                        />
-                        <Text style={styles._header_heading}>Lustige Geschichte</Text>
+                    <TouchableOpacity style={styles._back_btn} onPress={() => props.navigation.goBack()}>
+                        <Ionicons name="close" size={30} color="#4A95FA" />
+                    </TouchableOpacity>
+                    <Text style={styles._sub_heading}>Lorem Ipsum ist ein einfacher Demo</Text>
+                    <Text style={styles._heading}>Vielaaugenflieger</Text>
+                    {/* <==========================> --- <==========================> */}
+                    <View>
+                        <FollowInfoAudio />
                     </View>
                     {/* <==========================> --- <==========================> */}
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles._slider_1_main}>
-                            <Image
-                                source={require("./../../Img/Premium1.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium12.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium1.png")}
-                                style={styles.slider1Img3}
-                            />
-                        </View>
-                    </ScrollView>
+                    <Text style={styles._details}>
+                        Lorem Ipsum ist ein einfacher Demo-Text für
+                        die Print- und Schriftindustrie. Lorem Ipsum ist
+                        in der Industrie bereits der Standard Demo-Text
+                        seit 1500, als ein unbekannter Schriftsteller eine
+                        Hand voll Wörter nahm und diese
+                        durcheinander warf um ein Musterbuch zu
+                        erstellen. Es hat nicht nur 5 Jahrhunderte
+                        überlebt, sondern auch in Spruch in die
+                        elektronische Schriftbearbeitung geschafft
+                        (bemerke, nahezu unverändert). Bekannt
+                        wurde es 1960, mit dem erscheinen von
+                        "Letraset", welches Passagen von Lorem Ipsum
+                        enhielt, so wie Desktop Software wie "Aldus
+                        PageMaker" - ebenfalls mit Lorem Ipsum.
+                    </Text>
 
-                     {/* <==========================> --- <==========================> */}
-                     <View style={styles._header_main}>
-                        <Image
-                            source={require("./../../Img/Schule.png")}
-                            style={styles._footer_img}
-                        />
-                        <Text style={styles._header_heading}>Schule</Text>
-                    </View>
                     {/* <==========================> --- <==========================> */}
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles._slider_1_main}>
-                            <Image
-                                source={require("./../../Img/Premium2.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium21.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium2.png")}
-                                style={styles.slider1Img3}
-                            />
-                        </View>
-                    </ScrollView>
-
+                    <View style={styles._list_main}>
+                        <Text style={styles._list_heading}>Erscheinungsdatum:</Text>
+                        <Text style={styles._list_sub_heading}> 10.07.2021</Text>
+                    </View>
+                    <View style={styles._list_main}>
+                        <Text style={styles._list_heading}>Autor:</Text>
+                        <Text style={styles._list_sub_heading}> Max Mustermsnn</Text>
+                    </View>
+                    <View style={styles._list_main}>
+                        <Text style={styles._list_heading}>Verlag:</Text>
+                        <Text style={styles._list_sub_heading}> Beispielverlag</Text>
+                    </View>
+                    <View style={styles._list_main}>
+                        <Text style={styles._list_heading}>Sprecher:</Text>
+                        <Text style={styles._list_sub_heading}> Maria Muster</Text>
+                    </View>
+                    <Text style={styles._copy_right}>©️ 2021 Hearooz</Text>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>
             </ScrollView>
@@ -131,7 +107,7 @@ export default function Premium(props) {
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => props.navigation.navigate("Premium")}>
                             <Image
-                                source={require("./../../Img/active2.png")}
+                                source={require("./../../Img/seconttab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
@@ -166,10 +142,6 @@ const styles = StyleSheet.create({
     },
     footerBG: {
         resizeMode: "cover",
-    },
-    PremiumBG: {
-        resizeMode: "cover",
-        height: 197
     },
     _menu_icon: {
         width: 40,
@@ -211,64 +183,40 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginTop: 20
     },
-    _card_header: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: 20
-    },
-    _card_heading: {
-        fontSize: 24,
-        fontWeight: "bold",
-        color: "white"
-    },
-    _card_sub_heading: {
+    _sub_heading: {
         fontSize: 16,
-        fontWeight: "bold",
-        color: "white",
-        marginLeft: 20,
-        marginTop: -10
-    },
-    _Informationen_btn: {
-        borderBottomWidth: 1,
-        borderBottomColor: "#FFED47",
-        marginLeft: 20,
-        width: "40%",
-        marginTop: 10
-    },
-    _Informationen_btn_text: {
-        fontSize: 16,
-        color: "#FFED47",
-        fontWeight: "bold"
-    },
-    _header_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 30,
+        color: "#535242",
         marginLeft: 20
     },
-    _header_heading: {
-        fontSize: 18,
-        color: "#535242",
+    _heading: {
+        fontSize: 24,
         fontWeight: "bold",
-        marginLeft: 10
+        color: "#535242",
+        marginLeft: 20
     },
-    _slider_1_main: {
+    _details: {
+        fontSize: 15,
+        color: "#535242",
+        margin: 20
+    },
+    _list_main: {
         flexDirection: "row",
-        alignItems: "center",
-        marginTop: 20,
+        marginHorizontal: 20
     },
-    slider1Img1: {
-        width: 160,
-        height: 160,
-        borderRadius: 10,
-        marginLeft: 20,
+    _list_heading: {
+        color: "#4A95FA",
+        fontSize: 16,
+        fontWeight: "bold"
     },
-    slider1Img3: {
-        width: 160,
-        height: 160,
-        borderRadius: 10,
-        marginLeft: 20,
-        marginRight: 10
+    _list_sub_heading: {
+        color: "#4A95FA",
+        fontSize: 16,
     },
+    _copy_right: {
+        fontSize: 18,
+        color: "#4A95FA",
+        marginHorizontal: 20,
+        fontWeight: "bold",
+        marginTop:20
+    }
 });

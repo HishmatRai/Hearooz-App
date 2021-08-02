@@ -5,12 +5,26 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-import FollowInfoAudio from './../../Components/FollowInfoAudio/FollowInfoAudio'
-export default function Premium(props) {
+import CoverSound from './../../Components/CoverSound/CoverSound'
+export default function SlumberTime(props) {
+    const [info, setInfo] = useState(false);
+    const [activeBtn, setActiveBtn] = useState(0);
+
     useEffect(() => {
         StatusBar.setHidden(true);
     }, [])
 
+    const DataList = [
+        { value: "Aus" },
+        { value: "5 Minuten" },
+        { value: "10 Minuten" },
+        { value: "15 Minuten" },
+        { value: "30 Minuten" },
+        { value: "45 Minuten" },
+        { value: "60 Minuten" },
+        { value: "Ende des kapitels" },
+        { value: "Ende der Folge" },
+    ]
     return (
         <View style={styles.container}>
             {/* <==========================> --- <==========================> */}
@@ -28,7 +42,7 @@ export default function Premium(props) {
                             <Ionicons name="home-sharp" size={30} color="white" />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles._menu_icon} onPress={() => props.navigation.navigate("SlumberTime")}>
-                            <Ionicons name="moon" size={30} color="white" />
+                            <Ionicons name="moon" size={30} color="#FD6387" />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles._menu_icon} onPress={() => props.navigation.navigate("Search")}>
                             <Ionicons name="search" size={30} color="white" />
@@ -43,77 +57,47 @@ export default function Premium(props) {
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles._main}>
-                    {/* <==========================> --- <==========================> */}
-                    <ImageBackground
-                        source={require("./../../Img/PremiumBG.png")}
-                        style={styles.PremiumBG}
-                    >
-                        <View style={styles._card_header}>
-                            <Text style={styles._card_heading}>Dies ist der{"\n"}Premiumbereich</Text>
-                            <Image
-                                source={require("./../../Img/Premiumbereich.png")}
-                                style={styles.active1}
-                            />
-                        </View>
-                        <Text style={styles._card_sub_heading}>Um die unteren inhalte abzuspielen,{"\n"}
-                            benötigst du ein Abo.</Text>
-                        <TouchableOpacity style={styles._Informationen_btn}>
-                            <Text style={styles._Informationen_btn_text}>Mehr Informationen ></Text>
-                        </TouchableOpacity>
-                    </ImageBackground>
 
                     {/* <==========================> --- <==========================> */}
-                    <View style={styles._header_main}>
-                        <Image
-                            source={require("./../../Img/NeueFolgen.png")}
-                            style={styles._footer_img}
-                        />
-                        <Text style={styles._header_heading}>Lustige Geschichte</Text>
-                    </View>
-                    {/* <==========================> --- <==========================> */}
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles._slider_1_main}>
-                            <Image
-                                source={require("./../../Img/Premium1.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium12.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium1.png")}
-                                style={styles.slider1Img3}
-                            />
-                        </View>
-                    </ScrollView>
+                    <TouchableOpacity style={styles._back_btn} onPress={() => props.navigation.goBack()}>
+                        <Ionicons name="close" size={30} color="#4A95FA" />
+                    </TouchableOpacity>
+                    <Text style={styles._heading}>Stelle die Schlummerzeit ein.</Text>
 
-                     {/* <==========================> --- <==========================> */}
-                     <View style={styles._header_main}>
-                        <Image
-                            source={require("./../../Img/Schule.png")}
-                            style={styles._footer_img}
-                        />
-                        <Text style={styles._header_heading}>Schule</Text>
-                    </View>
                     {/* <==========================> --- <==========================> */}
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles._slider_1_main}>
-                            <Image
-                                source={require("./../../Img/Premium2.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium21.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Premium2.png")}
-                                style={styles.slider1Img3}
-                            />
-                        </View>
-                    </ScrollView>
+                    {DataList.map((v, i) => {
+                        return (
+                            <TouchableOpacity style={styles.select_main}
+                                onPress={() => setActiveBtn(i)}
+                                style={
+                                    activeBtn === i
+                                        ? {
+                                            flexDirection: "row",
+                                            alignItems: "center",
+                                            justifyContent: "space-between",
+                                            backgroundColor: '#E7F5FC',
+                                            paddingHorizontal: 20,
+                                            marginTop: 10,
+                                            paddingVertical:15
+                                        }
+                                        : {
+                                            flexDirection: "row",
+                                            alignItems: "center",
+                                            justifyContent: "space-between",
+                                            paddingHorizontal: 20,
+                                            marginTop: 10,
+                                            paddingVertical:15
 
+                                        }
+                                }>
+                                <Text style={styles._history_text}>{v.value}</Text>
+                                {
+                                    activeBtn === i
+                                        ? <Ionicons name="checkmark-sharp" size={30} color="#22DBB7" />
+                                        : null}
+                            </TouchableOpacity>
+                        )
+                    })}
                 </View>
                 <View style={{ marginBottom: 20 }}></View>
             </ScrollView>
@@ -131,7 +115,7 @@ export default function Premium(props) {
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => props.navigation.navigate("Premium")}>
                             <Image
-                                source={require("./../../Img/active2.png")}
+                                source={require("./../../Img/seconttab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
@@ -166,10 +150,6 @@ const styles = StyleSheet.create({
     },
     footerBG: {
         resizeMode: "cover",
-    },
-    PremiumBG: {
-        resizeMode: "cover",
-        height: 197
     },
     _menu_icon: {
         width: 40,
@@ -211,64 +191,18 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginTop: 20
     },
-    _card_header: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: 20
-    },
-    _card_heading: {
-        fontSize: 24,
+    _heading: {
+        color: "#535242",
+        fontSize: 18,
         fontWeight: "bold",
-        color: "white"
-    },
-    _card_sub_heading: {
-        fontSize: 16,
-        fontWeight: "bold",
-        color: "white",
-        marginLeft: 20,
-        marginTop: -10
-    },
-    _Informationen_btn: {
-        borderBottomWidth: 1,
-        borderBottomColor: "#FFED47",
-        marginLeft: 20,
-        width: "40%",
-        marginTop: 10
-    },
-    _Informationen_btn_text: {
-        fontSize: 16,
-        color: "#FFED47",
-        fontWeight: "bold"
-    },
-    _header_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 30,
         marginLeft: 20
     },
-    _header_heading: {
-        fontSize: 18,
+    select_main: {
+        backgroundColor: "red"
+    },
+    _history_text: {
+        fontSize: 16,
         color: "#535242",
-        fontWeight: "bold",
-        marginLeft: 10
-    },
-    _slider_1_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 20,
-    },
-    slider1Img1: {
-        width: 160,
-        height: 160,
-        borderRadius: 10,
-        marginLeft: 20,
-    },
-    slider1Img3: {
-        width: 160,
-        height: 160,
-        borderRadius: 10,
-        marginLeft: 20,
-        marginRight: 10
-    },
+        fontWeight: "bold"
+    }
 });

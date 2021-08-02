@@ -9,7 +9,7 @@ const img_play = require('./../../Img/resources/ui_play.png');
 const img_playjumpleft = require('./../../Img/resources/ui_playjumpleft.png');
 const img_playjumpright = require('./../../Img/resources/ui_playjumpright.png');
 
-export default class CoverSound extends React.Component {
+export default class SearchSound extends React.Component {
 
     static navigationOptions = props => ({
         title: "tesing",
@@ -169,7 +169,7 @@ export default class CoverSound extends React.Component {
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles._glass_btn}>
                                     <Image
-                                        source={require("./../../Img/coverGlass.png")}
+                                        source={require("./../../Img/searchblub.png")}
                                         style={styles.active1}
                                     />
                                 </TouchableOpacity>

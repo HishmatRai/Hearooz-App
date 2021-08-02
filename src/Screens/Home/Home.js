@@ -24,10 +24,10 @@ export default function Home(props) {
                         <TouchableOpacity style={styles._menu_icon}>
                             <Ionicons name="home-sharp" size={30} color="#FFEB5A" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._menu_icon}>
+                        <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("SlumberTime")}>
                             <Ionicons name="moon" size={30} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._menu_icon}>
+                        <TouchableOpacity style={styles._menu_icon} style={styles._menu_icon} onPress={()=> props.navigation.navigate("Search")}>
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>

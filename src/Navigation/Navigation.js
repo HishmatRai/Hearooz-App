@@ -12,7 +12,13 @@ import {
     Home,
     DrawerContent,
     Registrieren,
-    CoverDetail
+    CoverDetail,
+    SlumberTime,
+    Search,
+    FollowInfo,
+    Premium,
+    Favorites,
+    Notifications
 } from './../Screens/index'
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -45,7 +51,13 @@ function App() {
                 {/* <Stack.Screen name="PasswordWrong2" component={PasswordWrong2} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen  name="Registrieren" component={Registrieren} options={{ headerShown: false }} /> */}
-                <Stack.Screen  name="CoverDetail" component={CoverDetail} options={{ headerShown: false }} />
+                {/* <Stack.Screen  name="CoverDetail" component={CoverDetail} options={{ headerShown: false }} /> */}
+                {/* <Stack.Screen  name="SlumberTime" component={SlumberTime} options={{ headerShown: false }} /> */}
+                {/* <Stack.Screen  name="Search" component={Search} options={{ headerShown: false }} /> */}
+                {/* <Stack.Screen  name="FollowInfo" component={FollowInfo} options={{ headerShown: false }} /> */}
+                {/* <Stack.Screen  name="Premium" component={Premium} options={{ headerShown: false }} /> */}
+                {/* <Stack.Screen  name="Favorites" component={Favorites} options={{ headerShown: false }} /> */}
+                <Stack.Screen  name="Notifications" component={Notifications} options={{ headerShown: false }} />
                 {/* <Stack.Screen
           name="Home"
           component={HomeDrawer}
