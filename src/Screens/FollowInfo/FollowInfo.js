@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
 import FollowInfoAudio from './../../Components/FollowInfoAudio/FollowInfoAudio'
 export default function FollowInfo(props) {
     useEffect(() => {
@@ -34,7 +32,7 @@ export default function FollowInfo(props) {
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles._menu_icon}>
+                    <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("Profile")}>
                         <FontAwesome name="user-circle-o" size={30} color="white" />
                     </TouchableOpacity>
                 </View>

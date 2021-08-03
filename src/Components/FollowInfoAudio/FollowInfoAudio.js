@@ -6,9 +6,6 @@ import Sound from 'react-native-sound';
 const img_speaker = require('./../../Img/resources/ui_speaker.png');
 const img_pause = require('./../../Img/resources/ui_pause.png');
 const img_play = require('./../../Img/resources/ui_play.png');
-const img_playjumpleft = require('./../../Img/resources/ui_playjumpleft.png');
-const img_playjumpright = require('./../../Img/resources/ui_playjumpright.png');
-
 export default class FollowInfoAudio extends React.Component {
 
     static navigationOptions = props => ({

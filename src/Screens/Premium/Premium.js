@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
-import FollowInfoAudio from './../../Components/FollowInfoAudio/FollowInfoAudio'
 export default function Premium(props) {
     useEffect(() => {
         StatusBar.setHidden(true);

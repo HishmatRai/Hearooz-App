@@ -1,12 +1,10 @@
 import React from "react";
-import { View, StatusBar, Text, TouchableOpacity, Linking } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import {
   DrawerContentScrollView,
   DrawerItem,
 } from "@react-navigation/drawer";
-import Feather from 'react-native-vector-icons/dist/Feather';
 import styles from "./styles";
-import { Drawer } from "react-native-paper";
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 export default function CustomDrawerContent(props) {
   return (

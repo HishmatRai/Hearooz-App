@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
-import CoverSound from './../../Components/CoverSound/CoverSound'
 export default function SlumberTime(props) {
     const [info, setInfo] = useState(false);
     const [activeBtn, setActiveBtn] = useState(0);
