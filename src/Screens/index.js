@@ -13,7 +13,8 @@ import Search from './Search/Search';
 import FollowInfo from './FollowInfo/FollowInfo';
 import Premium from './Premium/Premium';
 import Favorites from './Favorites/Favorites';
-import Notifications from './Notifications/Notifications'
+import Notifications from './Notifications/Notifications';
+import Pricing from './Pricing/Pricing'
 export {
     Password,
     Login,
@@ -30,5 +31,6 @@ export {
     FollowInfo,
     Premium,
     Favorites,
-    Notifications
+    Notifications,
+    Pricing
 }

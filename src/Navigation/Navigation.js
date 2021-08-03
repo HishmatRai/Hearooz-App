@@ -18,7 +18,8 @@ import {
     FollowInfo,
     Premium,
     Favorites,
-    Notifications
+    Notifications,
+    Pricing
 } from './../Screens/index'
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -57,7 +58,8 @@ function App() {
                 {/* <Stack.Screen  name="FollowInfo" component={FollowInfo} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen  name="Premium" component={Premium} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen  name="Favorites" component={Favorites} options={{ headerShown: false }} /> */}
-                <Stack.Screen  name="Notifications" component={Notifications} options={{ headerShown: false }} />
+                {/* <Stack.Screen  name="Notifications" component={Notifications} options={{ headerShown: false }} /> */}
+                <Stack.Screen  name="Pricing" component={Pricing} options={{ headerShown: false }} />
                 {/* <Stack.Screen
           name="Home"
           component={HomeDrawer}

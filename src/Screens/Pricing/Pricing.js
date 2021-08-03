@@ -6,21 +6,11 @@ import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import CoverSound from './../../Components/CoverSound/CoverSound'
-export default function Notifications(props) {
+export default function Pricing(props) {
     useEffect(() => {
         StatusBar.setHidden(true);
     }, [])
-    let CardData = [
-        { img: require("./../../Img/Notifications1.png"), heading: "Neuer Titel eingeführt", subHeading: "Traumgeschichte", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications2.png"), heading: "Neuer Titel eingeführt", subHeading: "Traumgeschichte", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications3.png"), heading: "Programm aktualisieren", subHeading: "nicht verpassen", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications1.png"), heading: "Neuer Titel eingeführt", subHeading: "Traumgeschichte", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications2.png"), heading: "Neuer Titel eingeführt", subHeading: "Traumgeschichte", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications3.png"), heading: "Programm aktualisieren", subHeading: "nicht verpassen", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications1.png"), heading: "Neuer Titel eingeführt", subHeading: "Traumgeschichte", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications2.png"), heading: "Neuer Titel eingeführt", subHeading: "Traumgeschichte", time: "Vor 5 Minuten" },
-        { img: require("./../../Img/Notifications3.png"), heading: "Programm aktualisieren", subHeading: "nicht verpassen", time: "Vor 5 Minuten" },
-    ]
+
     return (
         <View style={styles.container}>
             {/* <==========================> --- <==========================> */}
@@ -60,25 +50,30 @@ export default function Notifications(props) {
                     </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    {CardData.map((v, i) => {
-                        return (
-                            <View style={styles._card_main}>
-                                <View style={styles._image_main}>
-                                    <Image
-                                        source={v.img}
-                                        style={styles.Notifications1}
-                                    />
-                                </View>
-                                <View style={styles._card_data_main}>
-                                    <Text style={styles._card_heading}>{v.heading}</Text>
-                                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-                                        <Text style={styles._card_sub_heading}>{v.subHeading}</Text>
-                                        <Text style={styles._time}>{v.time}</Text>
-                                    </View>
-                                </View>
-                            </View>
-                        )
-                    })}
+                    <Image
+                        source={require("./../../Img/Pricing.png")}
+                        style={styles.Pricing}
+                    />
+                    <Text style={styles._title}>Wählen Sie den besten Plan aus</Text>
+
+                    <View style={styles._premium_main}>
+                        <Text style={styles._premium_heading}>PREMIUM</Text>
+                    </View>
+                    <View style={styles._premium_price_main}>
+                    <Image
+                                source={require("./../../Img/monatlich.png")}
+                                style={styles.monatlich}
+                            />
+                     <View style={styles._price_show}>
+                         <Text style={styles._price_heading}>ab</Text>
+                         <Text style={styles._price}> 3,99 EUR</Text>
+                         <Text  style={styles._price_heading}> monatlich</Text>
+                     </View>
+                     <Text style={styles._heading}>Und alle freischalten</Text>
+                     <TouchableOpacity style={styles._Bestätigen_btn}>
+                         <Text style={styles._Bestätigen_btn_Text}>Bestätigen</Text>
+                     </TouchableOpacity>
+                    </View>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>
             </ScrollView>
@@ -108,7 +103,7 @@ export default function Notifications(props) {
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => props.navigation.navigate("Notifications")}>
                             <Image
-                                source={require("./../../Img/active4.png")}
+                                source={require("./../../Img/fourthtab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
@@ -132,6 +127,7 @@ const styles = StyleSheet.create({
     footerBG: {
         resizeMode: "cover",
     },
+
     _menu_icon: {
         width: 40,
         height: 40,
@@ -172,43 +168,68 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginTop: 20
     },
-    _card_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginHorizontal: 20,
-        backgroundColor: "white",
-        elevation: 3,
-        borderRadius: 10,
-        marginTop: 20,
-        height: 75
+    Pricing: {
+        alignSelf: "center"
     },
-    _image_main: {
-        width: "30%",
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
-    },
-    Notifications1: {
-        width: 81,
-        height: 75,
-    },
-    _card_data_main: {
-        width: "70%",
-        paddingRight: 10
-    },
-    _card_heading: {
+    _title: {
         fontSize: 18,
-        color: '#64A5FC',
-        fontWeight: 'bold'
-    },
-    _card_sub_heading: {
-        fontSize: 13,
         color: "#535242",
-        fontWeight: 'bold'
+        textAlign: "center",
+        fontWeight: "bold",
+        marginTop: 20
     },
-    _time: {
-        fontSize: 9,
-        color: "#444444",
-        fontWeight: 'bold'
+    _premium_main: {
+        backgroundColor: "#4E9EF3",
+        marginHorizontal: 20,
+        marginTop: 20,
+        height: 141,
+        borderRadius: 10
+    },
+    _premium_heading: {
+        fontSize: 26,
+        fontWeight: "bold",
+        color: "white",
+        textAlign: "center",
+        marginTop: 30
+    },
+    _premium_price_main:{
+        backgroundColor:"white",
+        marginHorizontal:40,
+        padding:20,
+        borderRadius:10,
+        marginTop:-50,
+        alignItems:"center"
+    },
+    _price_show:{
+        flexDirection:"row",
+        alignItems:"center"
+    },
+    _price_heading:{
+        fontSize:18,
+        color:"#1B67FA"
+    },
+    _price:{
+        fontSize:20,
+        color:"#1B67FA"  ,
+        fontWeight:"bold"
+    },
+    _heading:{
+        fontSize:16,
+        color:"#535242",
+        fontWeight:"bold",
+        marginTop:20
+    },
+    _Bestätigen_btn:{
+        backgroundColor:"#FBA312",
+        width:"90%",
+        height:50,
+        borderRadius:50,
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:40
+    },
+    _Bestätigen_btn_Text:{
+        fontSize:22,
+        color:"white"
     }
-
 });
