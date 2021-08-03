@@ -60,13 +60,21 @@ export default function Search(props) {
                     </View>
 
                     <View style={{ marginTop: 20 }}>
-                        <SearchSound />
-                        <SearchSound />
-                        <SearchSound />
-                        <SearchSound />
-                        <SearchSound />
-                        <SearchSound />
-                        <SearchSound />
+                        <TouchableOpacity onPress={() => props.navigation.navigate("FollowInfo")}>
+                            <SearchSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("FollowInfo")}>
+                            <SearchSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("FollowInfo")}>
+                            <SearchSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("FollowInfo")}>
+                            <SearchSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("FollowInfo")}>
+                            <SearchSound />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>

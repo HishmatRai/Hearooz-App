@@ -29,7 +29,7 @@ export default function Profile(props) {
                 <View style={styles._main}>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._Ronaldo_btn}>
+                    <TouchableOpacity style={styles._Ronaldo_btn} onPress={() => props.navigation.navigate("Home")}>
                         <Image
                             source={require("./../../Img/Ronaldo.png")}
                             style={styles._Ronaldo_Img}
@@ -38,7 +38,7 @@ export default function Profile(props) {
                     <Text style={styles._heading}>Ronaldo</Text>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._Ronaldo_btn}>
+                    <TouchableOpacity style={styles._Ronaldo_btn} onPress={() => props.navigation.navigate("Home")}>
                         <Image
                             source={require("./../../Img/Leonie.png")}
                             style={styles._Ronaldo_Img}
@@ -47,7 +47,7 @@ export default function Profile(props) {
                     <Text style={styles._heading}>Leonie</Text>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._Ronaldo_btn}>
+                    <TouchableOpacity style={styles._Ronaldo_btn} onPress={() => props.navigation.navigate("Home")}>
                         <Image
                             source={require("./../../Img/Sepp.png")}
                             style={styles._Ronaldo_Img}
@@ -66,7 +66,9 @@ export default function Profile(props) {
                         source={require("./../../Img/loginImgBG.png")}
                         style={styles._image}
                     >
+                        <TouchableOpacity onPress={() => props.navigation.navigate("LogOut")}>
                         <Text style={styles._heading2}>Ausloggen</Text>
+                        </TouchableOpacity>
                     </ImageBackground>
                 </View>
             </ScrollView>

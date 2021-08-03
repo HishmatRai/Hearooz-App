@@ -34,7 +34,7 @@ export default function CoverDetail(props) {
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles._menu_icon}>
+                    <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("Profile")}>
                         <FontAwesome name="user-circle-o" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
@@ -76,25 +76,27 @@ export default function CoverDetail(props) {
 
                     {/* <==========================> --- <==========================> */}
                     <View style={{ marginTop: 15 }}>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> props.navigation.navigate("FollowInfo")}>
                         <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
-                        <CoverSound />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>

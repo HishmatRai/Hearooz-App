@@ -5,8 +5,8 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Sound from './../../Components/Sound/Sound';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-import FollowInfoAudio from './../../Components/FollowInfoAudio/FollowInfoAudio'
-export default function Favorites(props) {
+import CoverSound from './../../Components/CoverSound/CoverSound'
+export default function LogOut(props) {
     useEffect(() => {
         StatusBar.setHidden(true);
     }, [])
@@ -34,7 +34,7 @@ export default function Favorites(props) {
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("Profile")}>
+                    <TouchableOpacity style={styles._menu_icon}>
                         <FontAwesome name="user-circle-o" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
@@ -43,73 +43,27 @@ export default function Favorites(props) {
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles._main}>
-                    {/* <==========================> --- <==========================> */}
-                    <ImageBackground
-                        source={require("./../../Img/FavoritesBG.png")}
-                        style={styles.PremiumBG}
-                    >
-                        <View style={styles._card_header}>
-                            <Text style={styles._card_heading}>AUSWAHL ÜBER{"\n"}
-                                KATEGORIEN NAME</Text>
-                            <Image
-                                source={require("./../../Img/FavoritesHeader.png")}
-                                style={styles.active1}
-                            />
-                        </View>
-                    </ImageBackground>
 
                     {/* <==========================> --- <==========================> */}
-                    <View style={styles._header_main}>
-                        <Image
-                            source={require("./../../Img/NeueFolgen.png")}
-                            style={styles._footer_img}
-                        />
-                        <Text style={styles._header_heading}>Lustige Geschichte</Text>
-                    </View>
-                    {/* <==========================> --- <==========================> */}
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles._slider_1_main}>
-                            <Image
-                                source={require("./../../Img/Favorites1.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Favorites12.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Favorites1.png")}
-                                style={styles.slider1Img3}
-                            />
-                        </View>
-                    </ScrollView>
+                    <TouchableOpacity style={styles._back_btn} onPress={() => props.navigation.goBack()}>
+                        <Ionicons name="close" size={30} color="#4A95FA" />
+                    </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    <View style={styles._header_main}>
-                        <Image
-                            source={require("./../../Img/Schule.png")}
-                            style={styles._footer_img}
-                        />
-                        <Text style={styles._header_heading}>Schule</Text>
-                    </View>
-                    {/* <==========================> --- <==========================> */}
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={styles._slider_1_main}>
-                            <Image
-                                source={require("./../../Img/Favorites2.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Favorites21.png")}
-                                style={styles.slider1Img1}
-                            />
-                            <Image
-                                source={require("./../../Img/Favorites2.png")}
-                                style={styles.slider1Img3}
-                            />
-                        </View>
-                    </ScrollView>
-
+                    <Image
+                        source={require("./../../Img/Pricing.png")}
+                        style={styles.Pricing}
+                    />
+                    <Text style={styles._title}>Willst du dich{"\n"}
+                        wirklich ausloggen?</Text>
+                    <Text style={{fontSize:18,color:"#707070",textAlign:"center",marginTop:20}}>Wenn du dich ausloggst, wird die App{"\n"}
+                        beendet und du musst sie neu starten.</Text>
+                    <TouchableOpacity style={styles._Bestätigen_btn} onPress={() => props.navigation.navigate("Registrieren")}>
+                        <Text style={styles._Bestätigen_btn_Text}>Ausloggen</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles._Bestätigen_btn2} onPress={() => props.navigation.navigate("Home")}>
+                        <Text style={styles._Bestätigen_btn_Text}>Abbrechen</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={{ marginBottom: 20 }}></View>
             </ScrollView>
@@ -133,7 +87,7 @@ export default function Favorites(props) {
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => props.navigation.navigate("Favorites")}>
                             <Image
-                                source={require("./../../Img/active3.png")}
+                                source={require("./../../Img/thirdtab.png")}
                                 style={styles.active1}
                             />
                         </TouchableOpacity>
@@ -163,10 +117,7 @@ const styles = StyleSheet.create({
     footerBG: {
         resizeMode: "cover",
     },
-    PremiumBG: {
-        resizeMode: "cover",
-        height: 120
-    },
+
     _menu_icon: {
         width: 40,
         height: 40,
@@ -207,46 +158,40 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginTop: 20
     },
-    _card_header: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: 20
+    Pricing: {
+        alignSelf: "center"
     },
-    _card_heading: {
-        fontSize: 24,
-        fontWeight: "bold",
-        color: "white"
-    },
-
-    _header_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 30,
-        marginLeft: 20
-    },
-    _header_heading: {
+    _title: {
         fontSize: 18,
         color: "#535242",
+        textAlign: "center",
         fontWeight: "bold",
-        marginLeft: 10
+        marginTop: 20
     },
-    _slider_1_main: {
-        flexDirection: "row",
+
+    _Bestätigen_btn: {
+        backgroundColor: "#4A95FA",
+        width: "90%",
+        height: 50,
+        borderRadius: 50,
         alignItems: "center",
+        justifyContent: "center",
+        marginTop: 40,
+        alignSelf:"center"
+    },
+    _Bestätigen_btn2: {
+        backgroundColor: "#FD6387",
+        width: "90%",
+        height: 50,
+        borderRadius: 50,
+        alignItems: "center",
+        justifyContent: "center",
         marginTop: 20,
+        alignSelf:"center"
     },
-    slider1Img1: {
-        width: 160,
-        height: 160,
-        borderRadius: 10,
-        marginLeft: 20,
-    },
-    slider1Img3: {
-        width: 160,
-        height: 160,
-        borderRadius: 10,
-        marginLeft: 20,
-        marginRight: 10
-    },
+    _Bestätigen_btn_Text: {
+        fontSize: 24,
+        color: "white",
+        fontWeight:"bold"
+    }
 });

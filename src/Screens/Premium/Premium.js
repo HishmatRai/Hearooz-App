@@ -34,7 +34,7 @@ export default function Premium(props) {
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles._menu_icon}>
+                    <TouchableOpacity style={styles._menu_icon} onPress={()=> props.navigation.navigate("Profile")}>
                         <FontAwesome name="user-circle-o" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
@@ -73,18 +73,24 @@ export default function Premium(props) {
                     {/* <==========================> --- <==========================> */}
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles._slider_1_main}>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("Pricing")}>
                             <Image
                                 source={require("./../../Img/Premium1.png")}
                                 style={styles.slider1Img1}
                             />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.navigation.navigate("Pricing")}>
                             <Image
                                 source={require("./../../Img/Premium12.png")}
                                 style={styles.slider1Img1}
                             />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.navigation.navigate("Pricing")}>
                             <Image
                                 source={require("./../../Img/Premium1.png")}
                                 style={styles.slider1Img3}
                             />
+                            </TouchableOpacity>
                         </View>
                     </ScrollView>
 
@@ -99,18 +105,24 @@ export default function Premium(props) {
                     {/* <==========================> --- <==========================> */}
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles._slider_1_main}>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("Pricing")}>
                             <Image
                                 source={require("./../../Img/Premium2.png")}
                                 style={styles.slider1Img1}
                             />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.navigation.navigate("Pricing")}>
                             <Image
                                 source={require("./../../Img/Premium21.png")}
                                 style={styles.slider1Img1}
                             />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.navigation.navigate("Pricing")}>
                             <Image
                                 source={require("./../../Img/Premium2.png")}
                                 style={styles.slider1Img3}
                             />
+                            </TouchableOpacity>
                         </View>
                     </ScrollView>
 

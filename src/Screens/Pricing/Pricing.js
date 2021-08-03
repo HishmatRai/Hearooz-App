@@ -70,7 +70,7 @@ export default function Pricing(props) {
                          <Text  style={styles._price_heading}> monatlich</Text>
                      </View>
                      <Text style={styles._heading}>Und alle freischalten</Text>
-                     <TouchableOpacity style={styles._Bestätigen_btn}>
+                     <TouchableOpacity style={styles._Bestätigen_btn} onPress={() => props.navigation.navigate("PricingFeature")}>
                          <Text style={styles._Bestätigen_btn_Text}>Bestätigen</Text>
                      </TouchableOpacity>
                     </View>

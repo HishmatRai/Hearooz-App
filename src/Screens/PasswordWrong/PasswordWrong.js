@@ -44,9 +44,10 @@ export default function PasswordWrong(props) {
                             autoFocusOnLoad
                             codeInputFieldStyle={styles.underlineStyleBase}
                             codeInputHighlightStyle={styles.underlineStyleHighLighted}
-                        // onCodeFilled = {(code => {
-                        //     console.log(`Code is ${code}, you are good to go!`)
-                        // })}
+                        onCodeFilled = {(code => {
+                            // console.log(`Code is ${code}, you are good to go!`)
+                            {code !== "12345" ? props.navigation.navigate("PasswordWrong2") : props.navigation.navigate("Login")}
+                        })}
                         />
                     </View>
 

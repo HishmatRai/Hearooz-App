@@ -31,7 +31,7 @@ export default function Home(props) {
                             <Ionicons name="search" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles._menu_icon}>
+                    <TouchableOpacity style={styles._menu_icon}  onPress={()=> props.navigation.navigate("Profile")}>
                         <FontAwesome name="user-circle-o" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
@@ -53,10 +53,12 @@ export default function Home(props) {
                     {/* <==========================> --- <==========================> */}
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles._slider_1_main}>
+                            <TouchableOpacity onPress={()=> props.navigation.navigate("CoverDetail")}>
                             <Image
                                 source={require("./../../Img/slider1Img1.png")}
                                 style={styles.slider1Img1}
                             />
+                            </TouchableOpacity>
                             <Image
                                 source={require("./../../Img/slider1Img2.png")}
                                 style={styles.slider1Img1}

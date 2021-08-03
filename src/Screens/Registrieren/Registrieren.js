@@ -86,13 +86,13 @@ export default function Login(props) {
                         <View style={styles._lets_go_btn} >
                             <Text style={styles._lets_go_btn_text}>Los geht's</Text>
                         </View>
-                        : <TouchableOpacity style={styles._lets_go_btn_visible} >
+                        : <TouchableOpacity style={styles._lets_go_btn_visible} onPress={()=>props.navigation.navigate("Password")}>
                             <Text style={styles._lets_go_btn_text}>Los geht's</Text>
                         </TouchableOpacity>}
                     {/* <==========================> --- <==========================> */}
                     <View style={styles._login}>
                         <Text style={styles._remember_data_text}>Bereits registriert? </Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>
                             <Text style={styles._remember_data_btn_text}>Zum Login!</Text>
                         </TouchableOpacity>
                     </View>

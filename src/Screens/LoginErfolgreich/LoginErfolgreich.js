@@ -34,7 +34,7 @@ export default function LoginErfolgreich(props) {
                     <Text style={styles._heading}>Login erfolgreich!</Text>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._los_btn}>
+                    <TouchableOpacity style={styles._los_btn} onPress={()=> props.navigation.navigate("Home")}>
                         <Text style={styles._los_btn_text}>Lass uns gehen</Text>
                     </TouchableOpacity>
 

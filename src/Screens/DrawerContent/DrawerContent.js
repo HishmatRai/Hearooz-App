@@ -67,7 +67,9 @@ export default function CustomDrawerContent(props) {
           labelStyle={{
             fontSize: 20,
             color: "#FFE96E",
+            
           }}
+          onPress={() => props.navigation.navigate("LogOut")}
         />
       </View>
     </DrawerContentScrollView >
